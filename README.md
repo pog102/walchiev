@@ -37,8 +37,9 @@ walchiev -i $HOME/Pictures/image.jpg -d pogpog69420
 paru -S walchiev
 ```
 ## Roadmap
-- custom colors
+- config file for custom colors
 - dinamic icon size based on the image resolution
+- positioning types (Southeast, Northeast, Northwest)
 
 ## Features
 - [pywal](https://github.com/dylanaraps/pywal) support
