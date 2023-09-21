@@ -64,7 +64,7 @@ paru -S walchiev
 
 ## Roadmap
 - config file for custom colors
-- dinamic icon size based on the image resolution
+- dynamic icon size based on the image resolution
 - positioning types (Southeast, Northeast, Northwest)
 
 ## Features
