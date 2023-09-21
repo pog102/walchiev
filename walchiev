@@ -1,6 +1,6 @@
 #!/bin/bash
 steam_id=""
-svg_image=trop 
+svg_image="/usr/share/icons/walchiev/trop.svg"
 image=""
 margin_x=119
 margin_y=$margin_x
@@ -69,18 +69,18 @@ else
   first_color=#000000
   all_color=#ffffff
 fi
-  sed -e "s/fill=\"#.*\"/fill=\"$first_color\"/g" "/usr/share/icons/walchiev/$svg_image.svg" > "/tmp/$svg_image.svg"
+  sed -e "s/fill=\"#.*\"/fill=\"$first_color\"/g" "$svg_image" > "/tmp/svg_image.svg"
   for k in $all_color
   do
     let i++
-    sed -e "s/stroke:#.*;stroke-wi/stroke:$k;stroke-wi/g" "/tmp/$svg_image.svg" > "/tmp/${svg_image}_${i}.svg"
+    sed -e "s/stroke:#.*;stroke-wi/stroke:$k;stroke-wi/g" "/tmp/svg_image.svg" > "/tmp/svg_image_${i}.svg"
   done
 }
 
 iterator() {
  h=$1
   for ((a = $h; a >= 0; a--)); do
-          color=$(command ls /tmp/${svg_image}*.svg | shuf -n 1 )
+          color=$(command ls /tmp/svg_image_*.svg | shuf -n 1 )
 
           [ "$total_trophies" -le "0" ] && return # if it stucks in a loop
 
