@@ -1,6 +1,9 @@
 # 🏆 walchiev [![Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Paypal Donate](https://img.shields.io/badge/Donate-Paypal-2244dd.svg)](https://www.paypal.com/paypalme/ernisD)   [![AUR version](https://img.shields.io/aur/version/walchiev)](https://aur.archlinux.org/packages/walchiev)
+Your mileage may vary depending on the resolution of the image
 <br>![image](https://raw.githubusercontent.com/pog102/walchiev/main/assets/1695316499_grim.png)
-Your milagy may wary depending on the resolution of the image
+
+<h1 align="center">walchiev</h1>
+Walchiev is an open-source tool for generating icons on your wallpaper based on the total number of completed Steam games you've achieved
 
 ## Dependecies
 
@@ -26,7 +29,6 @@ Your milagy may wary depending on the resolution of the image
      sudo make install
      ```
 ### Usage
-All the defaulst are set 
 ```bash
 walchiev -i $HOME/Pictures/image.jpg -d pogpog69420
 ```
