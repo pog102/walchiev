@@ -55,7 +55,7 @@ and more:
     -d your steam id
     -s "/path/to/vector.svg"
 ```
-The image output is located in $HOME/Pictures/walchiev.png
+The image output is located in **$HOME/Pictures/walchiev.png**
 
 ### AUR
 
