@@ -36,6 +36,9 @@ walchiev -i $HOME/Pictures/image.jpg -d pogpog69420
 ```bash
 paru -S walchiev
 ```
+## Roadmap
+- custom colors
+- dinamic icon size based on the image resolution
 
 ## Features
 - [pywal](https://github.com/dylanaraps/pywal) support
