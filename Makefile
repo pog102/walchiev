@@ -19,7 +19,6 @@ uninstall:
 	$(RM) $(DESTINATION_BIN)$(TARGET)
 	$(RM) -r $(DESTINATION_ICONS)
 	$(RM) /usr/local/bin/$(TARGET)
-	rm -rf /usr/local/share/icons/MonoDev
 
 clean:
 	$(RM) ./walchiev
