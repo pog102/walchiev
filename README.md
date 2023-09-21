@@ -1,7 +1,7 @@
 # walchiev [![Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Paypal Donate](https://img.shields.io/badge/Donate-Paypal-2244dd.svg)](https://www.paypal.com/paypalme/ernisD)   [![AUR version](https://img.shields.io/aur/version/walchiev)](https://aur.archlinux.org/packages/walchiev)
 <br>
-adaddaa
 
+![image](https://raw.githubusercontent.com/pog102/walchiev/main/assets/1695316499_grim.png)
 ## Dependecies
 
 - imagemagick
