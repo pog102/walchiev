@@ -33,7 +33,7 @@ Walchiev is an open-source tool for generating icons on your wallpaper based on 
 walchiev -i $HOME/Pictures/image.jpg -d pogpog69420
 ```
 
-Settng the icon size:
+Setting the icon size:
 ```bash
 walchiev -i $HOME/Pictures/image.jpg -s 400 -d pogpog69420
 ```
@@ -61,6 +61,7 @@ and more:
 ```bash
 paru -S walchiev
 ```
+
 ## Roadmap
 - config file for custom colors
 - dinamic icon size based on the image resolution
