@@ -49,7 +49,7 @@ and more:
     -i "/path/to/img.jpg"
     -x starting x0 coordinate (px)
     -y starting y0 coordinate (px)
-    -l starting line of a function
+    -l starting height of the linear function
     -z vector size (px)
     -o "/path/to/walchie.png"
     -d your steam id
