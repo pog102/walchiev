@@ -13,7 +13,7 @@ img_output="$HOME/Pictures/walchiev.png"
 help() {
   echo "usage: walchiev [-i \"/path/to/image.jpg\"] [-x] [-y] [-s \"path/to/vector.svg\"] [-l] [-z] 
   [-o \"/path/to/walchie.png\"] [-h] [-d]
-  walchiev - genetrate icons on your wallpaper based on your completed games
+  walchiev - Perfected steam games icon wallpaper generator 
   options:
     -h show this help message and exit
     -i \"/path/to/img.jpg\"
