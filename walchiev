@@ -1,0 +1,108 @@
+#!/bin/bash
+steam_id=""
+svg_image=trop 
+image=""
+margin_x=119
+margin_y=$margin_x
+x_0=-36 # starting point of x
+y_0=$x_0
+h=0 # starting height of a the linear function
+svg_size=200
+img_output="$HOME/Pictures/walchiev.png"
+
+help() {
+  echo "usage: walchiev [-i \"/path/to/image.jpg\"] [-x] [-y] [-s \"path/to/vector.svg\"] [-l] [-z] 
+  [-o \"/path/to/walchie.png\"] [-h] [-d]
+  walchiev - genetrate icons on your wallpaper based on your completed games
+  options:
+    -h show this help message and exit
+    -i \"/path/to/img.jpg\"
+    -x starting x0 coordinate (px)
+    -y starting y0 coordinate (px)
+    -l starting line of a function
+    -z vector size (px)
+    -o \"/path/to/walchie.png\"
+    -d your steam id
+    -s \"/path/to/vector.svg\""
+    exit
+}
+
+[[ -z "$*" ]] && help
+
+while getopts "i:x:m:y:s:l:z:o:d:h" opt; do
+  case $opt in
+    i) image="$OPTARG";;
+    x) x_0="$OPTARG";;
+    m) margin_x="$OPTARG";margin_y="$OPTARG";;
+    y) y_0="$OPTARG";;
+    s) svg_image="$OPTARG";;
+    l) h="$OPTARG";;
+    z) svg_size="$OPTARG";;
+    o) img_output="$OPTARG";;
+    d) steam_id="$OPTARG";;
+    h) help;;
+    :) echo "Error: option $OPTARG requires an argument"
+      exit;;
+    ?) echo "Invalid option: $OPTARG"
+      exit;;
+  esac
+done
+shift $(( OPTIND - 1 ))
+
+if [[ -z "$steam_id" ]];then
+echo "no id specify" && exit
+else
+total_trophies=$(curl -s "https://steamcommunity.com/id/$steam_id" | grep -o -a -m 1 "<div class=\"value\".*" | grep -o "[0-9]*")
+fi
+
+[ ! -f "$image" ] && echo "no image specify" && exit
+
+image_h=$(identify -format "%h" $image) # wont generate new icon pass the threshold
+image_w=$(identify -format "%w" $image)
+
+get_py_colors() {
+file=~/.cache/wal/colors
+if [ -f "$file" ];then
+  first_color=$(head -n 1 $file)
+  all_color=$(tail -n+2 $file)
+else
+  first_color=#000000
+  all_color=#ffffff
+fi
+  sed -e "s/fill=\"#.*\"/fill=\"$first_color\"/g" "/usr/share/icons/walchiev/$svg_image.svg" > "/tmp/$svg_image.svg"
+  for k in $all_color
+  do
+    let i++
+    sed -e "s/stroke:#.*;stroke-wi/stroke:$k;stroke-wi/g" "/tmp/$svg_image.svg" > "/tmp/${svg_image}_${i}.svg"
+  done
+}
+
+iterator() {
+ h=$1
+  for ((a = $h; a >= 0; a--)); do
+          color=$(command ls /tmp/${svg_image}*.svg | shuf -n 1 )
+
+          [ "$total_trophies" -le "0" ] && return # if it stucks in a loop
+
+          x=$(( ( -a+h ) * margin_x+x_0 ))
+          y=$((a * margin_y + y_0))
+
+          if [[ "$x" -lt "$((image_w-145))" ]] && [[ "$y" -lt "$((image_h-30))" ]]; then
+          [ "$((total_trophies--))" -le "0" ] && return # decrease the trophy number when inside the picture dimensions
+              [ $x -ge 0 ] && simx='+' || simx='' 
+              [ $y -ge 0 ] && simy='+' || simy='' 
+                coordinates=( "( $color -resize $svg_sizex$svg_size -geometry  $simx$x$simy$y ) -composite " "${coordinates[@]}" )
+          fi
+  done
+  ((h++))
+ iterator $h
+}
+
+get_py_colors
+iterator $h
+
+# Imagemagick
+convert -background none "$image" \
+        -gravity southwest \
+         ${coordinates[*]} \
+        "$img_output"
