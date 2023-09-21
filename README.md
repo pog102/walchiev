@@ -2,9 +2,7 @@
 <br>
 adaddaa
 
-## Prerequisites
-
-Make sure you have the following prerequisites installed on your system:
+## Dependecies
 
 - imagemagick
 
@@ -27,6 +25,8 @@ Make sure you have the following prerequisites installed on your system:
      ```bash
      sudo make install
      ```
+### Usage
+
 ### AUR
 
 ```bash
