@@ -26,6 +26,10 @@ adaddaa
      sudo make install
      ```
 ### Usage
+All the defaulst are set 
+```bash
+walchiev -i $HOME/Pictures/image.jpg -d pogpog69420
+```
 
 ### AUR
 
