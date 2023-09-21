@@ -1,4 +1,4 @@
-# Devify [![Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Paypal Donate](https://img.shields.io/badge/Donate-Paypal-2244dd.svg)](https://www.paypal.com/paypalme/ernisD)   [![AUR version](https://img.shields.io/aur/version/devify)](https://aur.archlinux.org/packages/devify)
+# walchiev [![Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Paypal Donate](https://img.shields.io/badge/Donate-Paypal-2244dd.svg)](https://www.paypal.com/paypalme/ernisD)   [![AUR version](https://img.shields.io/aur/version/walchiev)](https://aur.archlinux.org/packages/walchiev)
 <br>
 adaddaa
 
@@ -13,13 +13,13 @@ Make sure you have the following prerequisites installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/pog102/devify.git
+   git clone https://github.com/pog102/walchiev.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd devify
+   cd walchiev
    ```
 
 3. Install
@@ -30,7 +30,7 @@ Make sure you have the following prerequisites installed on your system:
 ### AUR
 
 ```bash
-paru -S devify
+paru -S walchiev
 ```
 
 ## Features
